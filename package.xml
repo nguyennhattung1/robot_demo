@@ -9,10 +9,29 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
+  <!-- URDF related dependencies -->
+  <depend>urdf</depend>
+  <depend>xacro</depend>
+  
+  <!-- Gazebo and simulation related dependencies -->
+  <depend>gazebo_ros</depend>
+  <depend>gazebo_ros_pkgs</depend>
+  
+  <!-- ROS2 Control related dependencies -->
+  <depend>ros2_control</depend>
+  <depend>ros2_controllers</depend>
+  <depend>controller_manager</depend>
+  <depend>hardware_interface</depend>
+  <depend>ign_ros2_control</depend>
+  
+  <!-- Navigation related dependencies -->
+  <depend>nav2_bringup</depend>
+  
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
+    <gazebo_ros gazebo_model_path="${prefix}/.."/>
   </export>
 </package>

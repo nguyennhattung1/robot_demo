@@ -17,9 +17,14 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
+# Find required dependencies for URDF and simulation
+find_package(urdf REQUIRED)
+find_package(xacro REQUIRED)
+find_package(gazebo_ros REQUIRED)
+find_package(ros2_control REQUIRED)
+find_package(ros2_controllers REQUIRED)
+find_package(controller_manager REQUIRED)
+find_package(hardware_interface REQUIRED)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -32,9 +37,17 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+# Process URDF files with xacro if needed
 install(
   DIRECTORY config description launch worlds
   DESTINATION share/${PROJECT_NAME}
 )
+
+# Install additional files needed for robot operation
+# Example: Install specific configuration files for controllers
+# install(FILES
+#   config/controller_config.yaml
+#   DESTINATION share/${PROJECT_NAME}/config
+# )
 
 ament_package()
