@@ -24,14 +24,14 @@
   <depend>hardware_interface</depend>
   <depend>ign_ros2_control</depend>
   
-  <!-- Navigation related dependencies -->
-  <depend>nav2_bringup</depend>
+  <!-- Navigation related dependencies
+  <depend>nav2_bringup</depend> -->
   
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
-    <gazebo_ros gazebo_model_path="${prefix}/.."/>
+   
   </export>
 </package>

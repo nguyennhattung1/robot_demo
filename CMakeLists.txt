@@ -39,7 +39,7 @@ endif()
 
 # Process URDF files with xacro if needed
 install(
-  DIRECTORY config description launch worlds
+  DIRECTORY config description launch worlds rviz
   DESTINATION share/${PROJECT_NAME}
 )
 
